@@ -124,6 +124,9 @@ for path in skills:
     assert '## Codex and Claude runtime' in text, path
     assert 'or ask in chat' in text, path
     assert 'starter defaults' in text and 'Do not write persistent learnings unless requested' in text, path
+    assert 'profile refresh' in text and 'in place, preserving unrelated user facts and rules' in text, path
+    assert 'Consumers must reread those canonical files' in text, path
+    assert 'new deliverables that would collide with unrelated existing files' in text, path
     assert '~/Desktop/' not in text and '/Users/' not in text, path
     for ref in re.findall(r'`(references/[^`]+\.md)`', text):
         assert (path.parent / ref).is_file(), (path, ref)
